@@ -7,8 +7,7 @@
     'category': 'CRM',
     'depends': ['crm'],
     'data': [
-        'views/crm_stage_view.xml',
-        'data/crm_stage_data.xml',
+        'views/crm_views.xml',
     ],
     'installable': True,
     'application': False,
