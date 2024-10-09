@@ -1,0 +1,14 @@
+<odoo>
+    <record id="crm_stage_lead" model="crm.stage">
+        <field name="kanban_color">#FF5733</field>
+    </record>
+    <record id="crm_stage_opportunity" model="crm.stage">
+        <field name="kanban_color">#33FF57</field>
+    </record>
+    <record id="crm_stage_won" model="crm.stage">
+        <field name="kanban_color">#3375FF</field>
+    </record>
+    <record id="crm_stage_lost" model="crm.stage">
+        <field name="kanban_color">#FF3333</field>
+    </record>
+</odoo>
