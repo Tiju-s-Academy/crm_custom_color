@@ -23,7 +23,7 @@
             </xpath>
             <xpath expr="//t[@t-name='kanban-box']//div[1]" position="attributes">
                 <attribute name="t-attf-style">
-                    #{'background-color:'} #{record.stage_color ? record.stage_color.value: 'red'} !important;
+                    #{'background-color:'} #{record.stage_color ? record.stage_color.value: 'white'} !important;
                 </attribute>
             </xpath>
         </field>
