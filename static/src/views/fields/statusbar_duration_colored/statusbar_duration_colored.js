@@ -3,18 +3,24 @@ import { StatusBarDurationField,statusBarDurationField } from "@mail/views/field
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 
-import { Component, onWillRender, useEffect, useExternalListener, useRef } from "@odoo/owl";
-import { browser } from "@web/core/browser/browser";
-import { useCommand } from "@web/core/commands/command_hook";
-import { Domain } from "@web/core/domain";
-import { Dropdown } from "@web/core/dropdown/dropdown";
-import { DropdownItem } from "@web/core/dropdown/dropdown_item";
-import { groupBy } from "@web/core/utils/arrays";
-import { escape } from "@web/core/utils/strings";
-import { throttleForAnimation } from "@web/core/utils/timing";
-import { useSpecialData } from "@web/views/fields/relational_utils";
+import { Component, onWillRender, onRendered, useEffect, useExternalListener, useRef } from "@odoo/owl";
 
 export class StatusBarDurationFieldColored extends StatusBarDurationField {
+
+    setup(){
+        super.setup()
+        
+        onRendered(()=>{
+            const rootElement = $(this.rootRef.el);
+            const stageColor = this.props.record.data['stage_color'];
+            let selected = rootElement.find('.o_arrow_button_current')
+            if (stageColor && selected) {
+                selected.css('background-color', stageColor);
+            }
+        })
+    }
+
+
 
     async selectItem(item) {
         const rootElement = $(this.rootRef.el);
