@@ -5,10 +5,15 @@
     'author': 'Muhammed Anas',
     'website': 'http://www.odoocrafts.com',
     'category': 'CRM',
-    'depends': ['crm'],
+    'depends': ['crm', 'mail'],
     'data': [
         'views/crm_views.xml',
     ],
+    "assets": {
+        "web.assets_backend": [
+            'crm_custom_color/static/src/views/fields/**/*'
+        ],
+    },
     'installable': True,
     'application': False,
     'license': 'LGPL-3',
