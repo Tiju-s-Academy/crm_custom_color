@@ -11,6 +11,7 @@ export class StatusBarDurationFieldColored extends StatusBarDurationField {
         super.setup()
         
         onRendered(()=>{
+            console.log('this.props.record.data', this.props.record.data)
             const rootElement = $(this.rootRef.el);
             const stageColor = this.props.record.data['stage_color'];
             let selected = rootElement.find('.o_arrow_button_current')
@@ -24,6 +25,8 @@ export class StatusBarDurationFieldColored extends StatusBarDurationField {
 
     async selectItem(item) {
         const rootElement = $(this.rootRef.el);
+        console.log('this.props.record.data', this.props.record.data)
+
         let old_selected = rootElement.find('.o_arrow_button_current')
         // Call the parent method to handle item selection
         await super.selectItem(item);
